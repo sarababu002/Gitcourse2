@@ -15,6 +15,7 @@ jobs:
       env:
         Greeting: Dear
         testvar: value-2
+        First_Name: Student 
       
       steps:
       - name: print-values-of-env-vars
@@ -24,9 +25,7 @@ jobs:
           echo "testvar $testvar"
           echo "testvar ${{env.testvar}}"  
           echo "$action_state=yellow" >> $GITHUB_ENV  
-        env:
-           First_Name: Student  
-           
+            
       - name: Use-the-value
         id: step_two
         run:  |

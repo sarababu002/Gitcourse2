@@ -22,11 +22,11 @@ jobs:
         run:  |
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "testvar $testvar"
-          echo "testvar ${{env.testvar}}"  #check env in order steps-> jobs-> workflow
-          echo "$action_state=yellow" >> $GITHUB_ENV  #added action_state to env
-          
+          echo "testvar ${{env.testvar}}"  
+          echo "$action_state=yellow" >> $GITHUB_ENV  
         env:
            First_Name: Student  
+           
       - name: Use-the-value
         id: step_two
         run:  |

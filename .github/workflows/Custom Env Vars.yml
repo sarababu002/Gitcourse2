@@ -19,10 +19,13 @@ jobs:
       steps:
       - name: print-values-of-env-vars
         run:  |
-          echo "$Greetin $First_Name. Today is $DAY_OF_WEEK!"
+          echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "testvar $testvar"
-          echo "testvar ${{env.testvar}}"
-
+          echo "testvar ${{env.testvar}}"  #check env in order steps-> jobs-> workflow
+          echo "$action_state=yellow" >> $GITHUB_ENV  #added action_state to env
+      - name: Use-the-value
+        run: |
+          echo "${{ env.action_state }}"  
         env:
            First_Name: Student
       

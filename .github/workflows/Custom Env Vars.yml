@@ -29,8 +29,8 @@ jobs:
            First_Name: Student  
       - name: Use-the-value
         id: step_two
-        run: |
-          echo "${{ env.action_state }}"  
+        run:  |
+           echo "${{ env.action_state }}"  
         
 
       
